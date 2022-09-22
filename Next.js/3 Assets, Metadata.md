@@ -67,5 +67,5 @@ import Script from 'next/script';
 />
  ```
   <Script> 태그는 아래와 같은 추가 기능을 갖고 있다. </br>
-  1. `strategy` - 스크립트가 load 되는 타이밍을 컨트롤하는 option이다. 예제의 `lazyOnload`는 브라우저의 idle time 때, 느즈막히 로드한다는 뜻이다. 
-  2. `onLoad` - 스크립트가 로드될 때, 실행되는 callback 함수다.
+  1.  `strategy` - 스크립트가 load 되는 타이밍을 컨트롤하는 option이다. 예제의 `lazyOnload`는 브라우저의 idle time 때, 느즈막히 로드한다는 뜻이다.  <br/>
+  2.  `onLoad` - 스크립트가 로드될 때, 실행되는 callback 함수다.
