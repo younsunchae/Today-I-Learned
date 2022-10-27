@@ -44,3 +44,44 @@ data_time을 Y-m-d 형식으로 출력<br/>
  group by user_id, product_id having count(*) >=2 
  ```
  user_id와 product_id가 2개 이상인 행 찾기
+ <br/>
+
+ ### 🍀 join
+
+ #### inner join : 교집합
+ ```sql
+ select test1.number from test1 join test2 on test1.number = test2.number; 
+```
+```sql
+select distinct c.cart_id from cart_products c inner join cart_products p on(c.cart_id = p.cart_id) where (c.name ='우유' and p.name='요거트') or (c.name='요거트' and p.name='우유') order by c.cart_id;
+```
+<br/>
+
+#### outer join : 매칭되는 값이 없어도 출력
+```sql
+select test1.*, test2.number from test1 left outer join test2 on test1.number = test2.number;
+```
+
+### 🍀 union
+중복값 제거하면서 테이블 합치고 싶을 때
+```sql
+select * from customers union select city from orders order by city
+```
+
+
+#### union all
+중복값 안 제거 하고 싶을 때
+<br/>
+
+### 🍀 case
+```sql
+select seq
+    case
+        when (조건) then 결과
+            case 
+        when(조건) then 결과
+        else 결과
+        end as case_result
+    from 'user' u
+```
+else 생략 하면 클남
