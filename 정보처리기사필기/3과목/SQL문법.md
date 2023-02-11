@@ -34,7 +34,68 @@ ALTER TABLE 테이블명
 
 데이터를 처리하는데 사용하는 언어
 
-### INSERT INTO
+### INSERT
+
+```SQL
+INSERT INTO 테이블명([속성명1,,]) VALUES (데이터)
+```
+
+### DELETE
+
+```SQL
+DELETE FROM 테이블명 [WHERE 조건]
+```
+
+### UPDATE
+
+```SQL
+UPDATE 테이블명 SET 속성명 = 데이터 [WHERE  조건]
+```
+
+### SELECT
+
+```SQL
+SELECT [PREDICATE][테이블명.]속성명[AS 별칭][그룹함수] FROM 테이블명 [WHERE] [GROUP BY] [HAVING] [ORDER BY]
+```
+
+#### 그룹 함수
+
+- COUNT(속성명)
+- SUM(속성명)
+- AVG(속성명)
+- MAX(속성명)
+- MIM(속성명)
+- STDDEV(속성명) : 그룹 별 표준 편자
+- VARIANCE(속성명) : 그룹별 분산
+
+#### PREDICATE : 불러올 튜플 수를 제한
+
+- ALL : 모든 튜플 검색, 생략 가능
+- DISTINCT : 중복된 튜플이 있으면 그 중 첫번째 1개만 검색
+- DISTINCTROW : 중복된 튜플을 제거하고 한 개만 검색하지만 선택된 속성을 제외하고 전체 튜플을 가져옴
+
+#### 연산자
+
+- = : 같다
+- <> : 같지 않다
+- <, >, >=, <=
+
+#### LIKE 연산자
+
+- % : 모든 문자를 대표함
+- \_ : 문자 하나
+- `#` : 숫자 하나
+
+#### 집합 연산자
+
+```SQL
+SELECT FROM UNION|UNION ALL|INTERSECT|EXCEPT FROM SELECT FROM
+```
+
+- UNION : 합집합 출력, 중복된 행은 한번만
+- UNION ALL : 중복된 행도 그대로
+- INTERSECT : 공통된 행만
+- EXCEPT : 첫번째 SELECT 조회 결과에서 두번째 SELECT문의 조회 결과를 제외한 결과
 
 ## DCL(Data Countrol Language)
 
